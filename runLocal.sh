@@ -1,0 +1,1 @@
+docker run  -v ${PWD}:$PWD -w $PWD/job_1 genepattern/stream_diffex python /stream/diffex_command_line.py  -m $PWD/test/data/stream_epg_result.pkl -of marker  -fig_width 10 -fig_height 7 -root S3  -preference S4,S1 -num_genes 15 -cutoff_zscore 1.5  -percentile_expr 95  -cutoff_logfc 0.25  -n_jobs 7
