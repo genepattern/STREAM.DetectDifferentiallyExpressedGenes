@@ -1,0 +1,36 @@
+#
+# ant -f ${GPUNIT_HOME}/build.xml -Dgpunit.diffStripTrailingCR="--strip-trailing-cr" -Dgp.host="beta.genepattern.org" -Dgp.url="https://beta.genepattern.org" -Dgp.user="ted-dev" -Dgp.password="" -Dgpunit.testfolder=`pwd` gpunit
+#
+name: STREAM.DetectDifferentiallyExpressedGenes
+module: STREAM.DetectDifferentiallyExpressedGenes
+params: 
+    "data.file": "./data/stream_epg_result.pkl" 
+    "output.filename": "test"
+    "root": "S1"
+    "preference": "S3,S4"
+    "genes": "Car2,Gata1,Epx"
+assertions:
+    jobStatus: success
+    files:
+        "test_stream_result.pkl":  !!null
+        "de_genes/de_genes_S1_S2 and S1_S0.pdf": !!null
+        "de_genes/de_genes_S1_S3 and S1_S0.pdf": !!null
+        "de_genes/de_genes_S1_S3 and S1_S2.pdf": !!null
+        "de_genes/de_genes_S1_S3 and S3_S4.pdf": !!null
+        "de_genes/de_genes_S1_S3 and S3_S5.pdf": !!null
+        "de_genes/de_genes_S3_S4 and S3_S5.pdf": !!null
+        "de_genes/de_genes_greater_S1_S2 and S1_S0.tsv": !!null
+        "de_genes/de_genes_greater_S1_S3 and S1_S0.tsv": !!null
+        "de_genes/de_genes_greater_S1_S3 and S1_S2.tsv": !!null
+        "de_genes/de_genes_greater_S1_S3 and S3_S4.tsv": !!null
+        "de_genes/de_genes_greater_S1_S3 and S3_S5.tsv": !!null
+        "de_genes/de_genes_greater_S3_S4 and S3_S5.tsv": !!null
+        "de_genes/de_genes_less_S1_S2 and S1_S0.tsv": !!null
+        "de_genes/de_genes_less_S1_S3 and S1_S0.tsv": !!null
+        "de_genes/de_genes_less_S1_S3 and S1_S2.tsv": !!null
+        "de_genes/de_genes_less_S1_S3 and S3_S4.tsv": !!null
+        "de_genes/de_genes_less_S1_S3 and S3_S5.tsv": !!null
+        "de_genes/de_genes_less_S3_S4 and S3_S5.tsv": !!null
+
+
+

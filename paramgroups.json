@@ -3,10 +3,10 @@
   "parameters": ["data.file", "output.filename" ]},
 
 {"name": "Differential Expression",
-  "parameters": ["root", "preference","percentile_expr","flag_use_precomputed", "cutoff_zscore", "cutoff_logfc" ] },
+  "parameters": ["root", "preference","percentile.expr","flag.use.precomputed", "cutoff.zscore", "cutoff.logfc" ] },
 
 {"name": "Plotting", "hidden": false,
-  "parameters": ["num_genes", "figure.width", "figure.height"]}
+  "parameters": ["num.genes", "figure.width", "figure.height"]}
 
 ]
 
