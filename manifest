@@ -9,7 +9,7 @@ categories=SingleCell
 commandLine=python /stream/diffex_command_line.py -m <data.file> -of <output.filename> <figure.width> <figure.height> <root> <preference> <cutoff.zscore>  <percentile.expr> <flag.use.precomputed> <cutoff.logfc> <num.genes> -n_jobs <job.cpuCount> 
 
 cpuType=any
-description=
+description=Used to detect differentially expressed genes between pairs of branches.
 fileFormat=pkl
 language=any
 minGenePatternVersion=3.9.13
@@ -136,7 +136,7 @@ p8_value=
 p9_MODE=
 p9_TYPE=TEXT
 p9_default_value=1.5
-p9_description=The z-score cutoff used for Mann–Whitney U test.
+p9_description=The z-score cutoff used for Mann - Whitney U test.
 p9_fileFormat=
 p9_flag=
 p9_name=cutoff.zscore
