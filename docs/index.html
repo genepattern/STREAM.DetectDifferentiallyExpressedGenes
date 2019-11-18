@@ -48,20 +48,25 @@
 
 <p>STREAM.DetectDifferentiallyExpressedGenes is used to detect differentially expressed genes between pairs of branches.</p>
 
-<p><h5>Huidong to add detail explaining this part of the STREAM pipeline</h5></p>
-
-<p>&nbsp;</p>
-
 <h2>Algorithm</h2>
 <p>
-<h5>Huidong to cover details of this portion of the analysis</h5>
+For each pair of branches  𝐵𝑖  and  𝐵𝑗 , and for the gene E, the gene expression values across cells from both branches are scaled to the range [0,1]. For gene expression  𝐸𝑖  from  𝐵𝑖  and gene expression  𝐸𝑗  from  𝐵𝑗 , we first calculate their mean values. Then, we check the fold change between mean values to make sure it is above a specified threshold (the default log2 fold change value is >0.25). Mann–Whitney U test is then used to test whether  𝐸𝑖  is greater than  𝐸𝑗  or  𝐸𝑖  is less than  𝐸𝑗 . Since the statistic U could be approximated by a normal distribution for large samples, and U depends on specific datasets, we standardize Uto Z-score to make it comparable between different datasets. For small samples where this test is underpowered (<20 cells per branch), we report only the fold change to qualitatively evaluate the difference between  𝐸𝑖  and  𝐸𝑗 . Genes with Z-score or fold change greater than the specified threshold (2.0 by default) are considered as differentially expressed genes between two branches. Formally:
+
+𝑧=1+𝑈−𝑚𝑈(𝜎𝑈)
+ 
+Where  𝑚𝑈 ,  𝜎𝑈  are the mean and standard deviation, and
+
+𝑚𝑈=𝑛𝑖𝑛𝑗2
+ 
+𝜎𝑈=𝑛𝑖𝑛𝑗12⎯⎯⎯⎯⎯⎯⎯⎯√((𝑛+1)−∑𝑙=1𝑘𝑡3𝑙−𝑡𝑙𝑛(𝑛−1)
+ 
+Where  𝑛=𝑛𝑖+𝑛𝑗   𝑛𝑖 , 𝑛𝑗  are the number of cells in each branch,  𝑡𝑖  is the number of cells sharing rank  𝑙  and  𝑘  is the number of distinct ranks.
 </p>
 
 <h2>References</h2>
 <p>H Chen, L Albergante, JY Hsu, CA Lareau, GL Bosco, J Guan, S Zhou, AN Gorban, DE Bauer, MJ Aryee, DM Langenau, A Zinovyev, JD Buenrostro, GC Yuan, L Pinello&nbsp;<a href="https://www.nature.com/articles/s41467-019-09670-4">Single-cell trajectories reconstruction, exploration and mapping of omics data with STREAM. </a> Nature Communications, volume 10, Article number: 1903 (2019)</p>
 <p>Nestorowa, S. et al.<a href="https://www.ncbi.nlm.nih.gov/pubmed/27365425"> A single-cell resolution map of mouse hematopoietic stem and progenitor cell differentiation</a>. Blood 128, e20-31 (2016).</p>
 <p>Pinello Lab &nbsp; <a href="https://github.com/pinellolab/STREAM">STREAM Github Repository</a></p>
-<p><b>ADD GPNB NOTEBOOK HERE WHEN READY</b></p>
 
 <h2>Input Files</h2>
 
