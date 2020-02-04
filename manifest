@@ -4,7 +4,6 @@
 JVMLevel=
 LSID=urn:lsid:broad.mit.edu:cancer.software.genepattern.module.analysis:00402:999999999
 author=Ted Liefeld, UCSD School of Medicine.
-categories=SingleCell
 
 commandLine=python /stream/diffex_command_line.py -m <data.file> -of <output.filename> <figure.width> <figure.height> <root> <preference> <cutoff.zscore>  <percentile.expr> <flag.use.precomputed> <cutoff.logfc> <num.genes> -n_jobs <job.cpuCount> 
 
@@ -182,6 +181,7 @@ quality=beta
 requiredPatchLSIDs=
 requiredPatchURLs=
 taskDoc=doc.html
-taskType=ScRnaSeq
+categories=Single-Cell; RNA-Seq
+taskType=Single-cell
 userid=ted
 version=inital revision
